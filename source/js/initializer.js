@@ -1,6 +1,8 @@
 const dataObjects = [];
 const letters = ['A', 'B', 'C', 'D', 'E'];
 
+const random = Math.random() * 10;
+
 for (let i = 0; i < 5; i++) {
   const obj = {};
 
@@ -8,10 +10,10 @@ for (let i = 0; i < 5; i++) {
 
   const dataArray = [];
 
-  const random = Math.random() * 10;
+  // const random = Math.random() * 10;
 
-  for (let i = 0; i < 12; i++) {
-    const value = random + i;
+  for (let j = 0; j < 12; j++) {
+    const value = random + j;
     dataArray.push(value);
   }
 
