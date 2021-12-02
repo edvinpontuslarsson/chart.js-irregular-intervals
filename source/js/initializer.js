@@ -1,12 +1,25 @@
-const dataObjects = [
-  {
-    label: 'Metric A',
-    dataArray: [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],
-  },
-  {
-    label: 'Metric B',
-    dataArray: [1.1, 2.2, 3.3, 1.1, 2.2, 3.3, 1.1, 2.2, 3.3, 1.1, 2.2, 3.3],
-  },
-];
+const dataObjects = [];
+const letters = ['A', 'B', 'C', 'D', 'E'];
+
+const random = Math.random() * 10;
+
+for (let i = 0; i < 5; i++) {
+  const obj = {};
+
+  obj.label = letters[i];
+
+  const dataArray = [];
+
+  for (let j = 0; j < 12; j++) {
+    const value = random + j + i * 0.1;
+    dataArray.push(value);
+  }
+
+  obj.dataArray = dataArray;
+
+  dataObjects.push(obj);
+}
+
+console.log(dataObjects);
 
 displayChart(dataObjects);

@@ -27,7 +27,9 @@ function displayChart(dataObjects) {
   const config = {
     type: 'line',
     data: data,
-    options: {},
+    options: {
+      stacked: true
+    },
   };
 
   const myChart = new Chart(document.getElementById('myChart'), config);
