@@ -10,10 +10,8 @@ for (let i = 0; i < 5; i++) {
 
   const dataArray = [];
 
-  // const random = Math.random() * 10;
-
   for (let j = 0; j < 12; j++) {
-    const value = random + j;
+    const value = random + j + i * 0.1;
     dataArray.push(value);
   }
 
