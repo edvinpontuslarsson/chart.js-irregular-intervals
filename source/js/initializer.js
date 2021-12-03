@@ -1,22 +1,24 @@
 const helper = new Helper();
 
+const eventDates = [
+  new Date(2020, 1, 5),
+  new Date(2020, 5, 2),
+  new Date(2020, 11, 25),
+];
+
+const metrics = ['A', 'B', 'C', 'D', 'E'];
+
 const dataObjects = [];
-const letters = ['A', 'B', 'C', 'D', 'E'];
 
-const random = Math.random() * 10;
-
-for (let i = 0; i < 5; i++) {
+for (const m of metrics) {
   const obj = {};
 
-  obj.label = letters[i];
+  obj.label = m;
 
   const dataArray = [];
 
-  for (let j = 0; j < 12; j++) {
-    const value = random + j + i * 0.1;
-
-    const day = helper.randomIntFromInterval(1, 28);
-    const date = new Date(2020, j, day);
+  for (const date of eventDates) {
+    const value = Math.random() * 10;
 
     const coordinates = {
       x: date,
