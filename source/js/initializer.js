@@ -4,8 +4,8 @@ const eventDates = [
   new Date(2017, 1, 5),
   new Date(2017, 3, 2),
   new Date(2018, 5, 21),
-  new Date(2018, 6, 2),
-  new Date(2020, 11, 25),
+  new Date(2018, 8, 2),
+  new Date(2021, 11, 25),
 ];
 
 const metrics = ['A', 'B', 'C', 'D', 'E'];
