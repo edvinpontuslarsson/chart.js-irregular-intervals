@@ -12,8 +12,6 @@ const metrics = ['A', 'B', 'C', 'D', 'E'];
 
 const dataObjects = [];
 
-// make linear up based on random
-
 for (const m of metrics) {
   const obj = {};
 
