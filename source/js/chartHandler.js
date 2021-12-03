@@ -37,7 +37,6 @@ function displayChart(dataObjects) {
           time: {
             // TODO maybe this should depend on time interval
             unit: 'quarter',
-            // stepSize: 3,
 
             displayFormats: {
               quarter: 'MMM yyyy',
@@ -54,7 +53,7 @@ function displayChart(dataObjects) {
             text: 'Date',
           },
           ticks: {
-            align: 'start',
+            // align: 'start',
           },
         },
         y: {
