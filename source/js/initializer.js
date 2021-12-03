@@ -35,6 +35,4 @@ for (const m of metrics) {
   dataObjects.push(obj);
 }
 
-console.log(dataObjects);
-
 displayChart(dataObjects);
