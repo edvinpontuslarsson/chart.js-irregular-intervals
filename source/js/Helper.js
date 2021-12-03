@@ -34,4 +34,9 @@ class Helper {
   randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
+  getDaysPassed(prevDate, currentDate) {
+    const oneDay = 24 * 60 * 60 * 1000;
+    return Math.round(Math.abs((prevDate - currentDate) / oneDay));
+  }
 }
