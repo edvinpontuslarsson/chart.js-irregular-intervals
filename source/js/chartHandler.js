@@ -11,8 +11,6 @@ function displayChart(dataObjects) {
   const helper = new Helper();
 
   const data = {
-    // commented out, now fixes automatically
-    // labels: months,
     datasets: dataObjects.map((dataObj, i) => ({
       label: dataObj.label,
       data: dataObj.dataArray,
@@ -32,10 +30,8 @@ function displayChart(dataObjects) {
       stacked: true,
       scales: {
         x: {
-          // offset: true,
           type: 'time',
           time: {
-            // TODO maybe this should depend on time interval
             unit: 'quarter',
 
             displayFormats: {
@@ -45,15 +41,9 @@ function displayChart(dataObjects) {
             // Luxon format string
             tooltipFormat: 'DD',
           },
-          grid: {
-            // offset: true,
-          },
           title: {
             display: true,
             text: 'Date',
-          },
-          ticks: {
-            // align: 'start',
           },
         },
         y: {
