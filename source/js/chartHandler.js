@@ -15,9 +15,9 @@ function displayChart(metrics) {
   const helper = new Helper();
 
   const data = {
-    datasets: metrics.map((dataObj, i) => ({
-      label: dataObj.label,
-      data: dataObj.dataArray.map((item) => ({
+    datasets: metrics.map((metricObj, i) => ({
+      label: metricObj.label,
+      data: metricObj.dataArray.map((item) => ({
         x: item.date,
         y: item.value,
       })),
