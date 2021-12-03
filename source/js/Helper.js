@@ -19,21 +19,6 @@ class Helper {
       '#ff9f40',
       '#ff6384',
     ];
-
-    this.allMonths = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
   }
 
   getBorderColor(i) {
@@ -46,7 +31,7 @@ class Helper {
     return this.bgColors[i];
   }
 
-  getAllMonths() {
-    return this.allMonths;
+  randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 }
