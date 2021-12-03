@@ -10,8 +10,12 @@
 function displayChart(dataObjects) {
   const helper = new Helper();
 
+  const months = Array(12)
+    .fill()
+    .map((item, index) => new Date(2020, index, 1));
+
   const data = {
-    labels: helper.getAllMonths(),
+    labels: months,
     datasets: dataObjects.map((dataObj, i) => ({
       label: dataObj.label,
       data: dataObj.dataArray,
@@ -28,7 +32,7 @@ function displayChart(dataObjects) {
     type: 'line',
     data: data,
     options: {
-      stacked: true
+      stacked: true,
     },
   };
 
