@@ -2,9 +2,9 @@ const helper = new Helper();
 
 const eventDates = [
   new Date(2017, 1, 5),
-  new Date(2017, 5, 2),
-  new Date(2018, 1, 5),
-  new Date(2018, 5, 2),
+  new Date(2017, 3, 2),
+  new Date(2018, 5, 5),
+  new Date(2018, 6, 2),
   new Date(2020, 11, 25),
 ];
 
