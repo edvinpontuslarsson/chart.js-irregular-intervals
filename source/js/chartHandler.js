@@ -33,6 +33,25 @@ function displayChart(dataObjects) {
     data: data,
     options: {
       stacked: true,
+      scales: {
+        x: {
+          type: 'time',
+          time: {
+            // Luxon format string
+            tooltipFormat: 'DD',
+          },
+          title: {
+            display: true,
+            text: 'Date',
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'value',
+          },
+        },
+      },
     },
   };
 
