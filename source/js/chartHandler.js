@@ -10,12 +10,7 @@
 function displayChart(dataObjects) {
   const helper = new Helper();
 
-  const months = Array(12)
-    .fill()
-    .map((item, index) => new Date(2020, index, 1));
-
   const data = {
-    labels: months,
     datasets: dataObjects.map((dataObj, i) => ({
       label: dataObj.label,
       data: dataObj.dataArray,
@@ -37,6 +32,12 @@ function displayChart(dataObjects) {
         x: {
           type: 'time',
           time: {
+            unit: 'quarter',
+
+            displayFormats: {
+              quarter: 'MMM yyyy',
+            },
+
             // Luxon format string
             tooltipFormat: 'DD',
           },
