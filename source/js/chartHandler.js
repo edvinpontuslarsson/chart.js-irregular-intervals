@@ -32,14 +32,29 @@ function displayChart(dataObjects) {
       stacked: true,
       scales: {
         x: {
+          // offset: true,
           type: 'time',
           time: {
+            // TODO maybe this should depend on time interval
+            unit: 'quarter',
+            // stepSize: 3,
+
+            displayFormats: {
+              quarter: 'MMM yyyy',
+            },
+
             // Luxon format string
             tooltipFormat: 'DD',
+          },
+          grid: {
+            // offset: true,
           },
           title: {
             display: true,
             text: 'Date',
+          },
+          ticks: {
+            align: 'start',
           },
         },
         y: {
