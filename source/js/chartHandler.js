@@ -1,19 +1,26 @@
 /**
- * @typedef IDataObject
+ * @typedef IData
+ * @property {Date} date
+ * @property {number} value
+ *
+ * @typedef IMetric
  * @property {string} label
- * @property {number[]} dataArray
+ * @property {IData[]} dataArray
  */
 
 /**
- * @param {IDataObject[]} dataObjects
+ * @param {IMetric[]} metrics
  */
-function displayChart(dataObjects) {
+function displayChart(metrics) {
   const helper = new Helper();
 
   const data = {
-    datasets: dataObjects.map((dataObj, i) => ({
+    datasets: metrics.map((dataObj, i) => ({
       label: dataObj.label,
-      data: dataObj.dataArray,
+      data: dataObj.dataArray.map((item) => ({
+        x: item.date,
+        y: item.value,
+      })),
 
       borderColor: helper.getBorderColor(i),
       backgroundColor: helper.getBackgroundColor(i),
@@ -32,6 +39,7 @@ function displayChart(dataObjects) {
         x: {
           type: 'time',
           time: {
+            // TODO show as months if < 1 year apart
             unit: 'quarter',
 
             displayFormats: {

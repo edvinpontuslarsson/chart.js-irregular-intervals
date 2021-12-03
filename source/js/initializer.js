@@ -27,12 +27,12 @@ for (const m of metrics) {
       value += daysPassed * 2;
     }
 
-    const coordinates = {
-      x: eventDates[i],
-      y: value,
+    const data = {
+      date: eventDates[i],
+      value,
     };
 
-    dataArray.push(coordinates);
+    dataArray.push(data);
   }
 
   obj.dataArray = dataArray;
