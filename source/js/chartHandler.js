@@ -1,19 +1,27 @@
 /**
- * @typedef IDataObject
+ * @typedef IData
+ * @property {Date} date
+ * @property {number} value
+ *
+ * @typedef IMetric
  * @property {string} label
- * @property {number[]} dataArray
+ * @property {IData[]} dataArray
  */
 
 /**
- * @param {IDataObject[]} dataObjects
+ * @param {IMetric[]} metrics
+ * @param {number} rangeInDays
  */
-function displayChart(dataObjects) {
+function displayChart(metrics, rangeInDays) {
   const helper = new Helper();
 
   const data = {
-    datasets: dataObjects.map((dataObj, i) => ({
-      label: dataObj.label,
-      data: dataObj.dataArray,
+    datasets: metrics.map((metricObj, i) => ({
+      label: metricObj.label,
+      data: metricObj.dataArray.map((item) => ({
+        x: item.date,
+        y: item.value,
+      })),
 
       borderColor: helper.getBorderColor(i),
       backgroundColor: helper.getBackgroundColor(i),
@@ -32,7 +40,7 @@ function displayChart(dataObjects) {
         x: {
           type: 'time',
           time: {
-            unit: 'quarter',
+            unit: rangeInDays && rangeInDays > 365 ? 'quarter' : 'month',
 
             displayFormats: {
               quarter: 'MMM yyyy',
