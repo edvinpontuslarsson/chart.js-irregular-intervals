@@ -10,8 +10,9 @@
 
 /**
  * @param {IMetric[]} metrics
+ * @param {number} rangeInDays
  */
-function displayChart(metrics) {
+function displayChart(metrics, rangeInDays) {
   const helper = new Helper();
 
   const data = {
@@ -39,8 +40,7 @@ function displayChart(metrics) {
         x: {
           type: 'time',
           time: {
-            // TODO show as months if < 1 year apart
-            unit: 'quarter',
+            unit: rangeInDays && rangeInDays > 365 ? 'quarter' : 'month',
 
             displayFormats: {
               quarter: 'MMM yyyy',

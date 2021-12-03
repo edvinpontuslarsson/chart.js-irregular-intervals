@@ -40,4 +40,9 @@ for (const m of metrics) {
   dataObjects.push(obj);
 }
 
-displayChart(dataObjects);
+const rangeInDays = helper.getDaysPassed(
+  eventDates[0],
+  eventDates[eventDates.length - 1]
+);
+
+displayChart(dataObjects, rangeInDays);
